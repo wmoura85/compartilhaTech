@@ -1,0 +1,64 @@
+@host = http://localhost:3333
+
+POST {{host}}/person
+
+{
+	"name": "John",
+	"age": 20
+}
+
+###
+POST {{host}}/person
+
+{
+	"name": "Tin",
+	"age": 66,
+	"active": true
+}
+
+###
+GET {{host}}/person
+
+###
+GET {{host}}/person/e7fd4fea-48aa-4166-bb13-e875823b8d04
+
+###
+PATCH {{host}}/person/78e83872-7c0c-4a3b-ab11-3b6f3a19cadf
+
+{
+	"age": 40
+}
+
+###
+DELETE {{host}}/person/1885f090-e082-4587-91b0-6a475c8e569a
+
+###RegrasVencimento##
+POST {{host}}/regrasVencimento
+
+{
+	"descricao" : "will igor e leo",
+	"tipoRegra": 1,
+	"tipoPeriodo": 3,
+	"diaVcto": 10,
+	"diaInicio": 1,
+	"diaRefenciaTelefonia": 21,
+	"preGerarProxMes": "S",
+	"inativo": "N"
+}
+
+###
+GET {{host}}/regrasVencimento
+
+###
+GET {{host}}/regrasVencimento/1
+
+###
+PATCH   {{host}}/regrasVencimento/11
+
+{
+"inativo": "N",
+"descricao" : "Regra 10."
+}
+
+###
+DELETE {{host}}/regrasVencimento/11
